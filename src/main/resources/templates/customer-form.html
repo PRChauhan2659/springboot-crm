@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+
+	<title>Save Customer</title>
+
+</head>
+<body>
+
+<div class="container">
+
+	<br><hr>
+
+	<h3>Save Customer</h3>
+	
+	<hr><br>
+	
+	<form action="#" th:action = "@{/customers/save}" th:object = "${customer}" method="POST">
+	
+		<input type="hidden" th:field = "*{id}" />
+	
+		<input type="text" th:field = "*{firstName}" class="form-control mb-4 col-4" placeholder="First Name">
+		
+		<input type="text" th:field = "*{lastName}" class="form-control mb-4 col-4" placeholder="Last Name">
+		
+		<input type="text" th:field = "*{email}" class="form-control mb-4 col-4" placeholder="Email">
+		
+		<button type="submit" class="btn btn-info col-2">Save</button>
+	
+	</form>
+	
+	<br><hr>
+	
+	<a th:href = "@{list}">Back to Customer List</a>
+
+</div>
+
+</body>
+</html>
